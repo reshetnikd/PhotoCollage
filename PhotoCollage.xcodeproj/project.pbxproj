@@ -11,7 +11,39 @@
 		35E3EF44259A26FE00B138ED /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E3EF43259A26FE00B138ED /* ContentView.swift */; };
 		35E3EF46259A26FF00B138ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35E3EF45259A26FF00B138ED /* Assets.xcassets */; };
 		35E3EF49259A26FF00B138ED /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35E3EF48259A26FF00B138ED /* Preview Assets.xcassets */; };
+		35E3EF58259A274C00B138ED /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35E3EF57259A274C00B138ED /* WidgetKit.framework */; };
+		35E3EF5A259A274C00B138ED /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35E3EF59259A274C00B138ED /* SwiftUI.framework */; };
+		35E3EF5D259A274C00B138ED /* PhotoCollageWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E3EF5C259A274C00B138ED /* PhotoCollageWidget.swift */; };
+		35E3EF5F259A274D00B138ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35E3EF5E259A274D00B138ED /* Assets.xcassets */; };
+		35E3EF63259A274D00B138ED /* PhotoCollageWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 35E3EF55259A274C00B138ED /* PhotoCollageWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		35E3EF6B259A57C500B138ED /* PhotosProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E3EF6A259A57C500B138ED /* PhotosProvider.swift */; };
+		35E3EF6E259A58C100B138ED /* PhotosProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E3EF6A259A57C500B138ED /* PhotosProvider.swift */; };
+		35E3EF72259A593300B138ED /* PhotoCollageWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E3EF71259A593300B138ED /* PhotoCollageWidgetView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		35E3EF61259A274D00B138ED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 35E3EF36259A26FE00B138ED /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 35E3EF54259A274C00B138ED;
+			remoteInfo = PhotoCollageWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		35E3EF67259A274D00B138ED /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				35E3EF63259A274D00B138ED /* PhotoCollageWidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		35E3EF3E259A26FE00B138ED /* PhotoCollage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoCollage.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -20,6 +52,14 @@
 		35E3EF45259A26FF00B138ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		35E3EF48259A26FF00B138ED /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		35E3EF4A259A26FF00B138ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		35E3EF55259A274C00B138ED /* PhotoCollageWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PhotoCollageWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		35E3EF57259A274C00B138ED /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		35E3EF59259A274C00B138ED /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		35E3EF5C259A274C00B138ED /* PhotoCollageWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollageWidget.swift; sourceTree = "<group>"; };
+		35E3EF5E259A274D00B138ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		35E3EF60259A274D00B138ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		35E3EF6A259A57C500B138ED /* PhotosProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosProvider.swift; sourceTree = "<group>"; };
+		35E3EF71259A593300B138ED /* PhotoCollageWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollageWidgetView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +70,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		35E3EF52259A274C00B138ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35E3EF5A259A274C00B138ED /* SwiftUI.framework in Frameworks */,
+				35E3EF58259A274C00B138ED /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -37,6 +86,8 @@
 			isa = PBXGroup;
 			children = (
 				35E3EF40259A26FE00B138ED /* PhotoCollage */,
+				35E3EF5B259A274C00B138ED /* PhotoCollageWidget */,
+				35E3EF56259A274C00B138ED /* Frameworks */,
 				35E3EF3F259A26FE00B138ED /* Products */,
 			);
 			sourceTree = "<group>";
@@ -45,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				35E3EF3E259A26FE00B138ED /* PhotoCollage.app */,
+				35E3EF55259A274C00B138ED /* PhotoCollageWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -54,6 +106,7 @@
 			children = (
 				35E3EF41259A26FE00B138ED /* PhotoCollageApp.swift */,
 				35E3EF43259A26FE00B138ED /* ContentView.swift */,
+				35E3EF6A259A57C500B138ED /* PhotosProvider.swift */,
 				35E3EF45259A26FF00B138ED /* Assets.xcassets */,
 				35E3EF4A259A26FF00B138ED /* Info.plist */,
 				35E3EF47259A26FF00B138ED /* Preview Content */,
@@ -69,6 +122,26 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		35E3EF56259A274C00B138ED /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				35E3EF57259A274C00B138ED /* WidgetKit.framework */,
+				35E3EF59259A274C00B138ED /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		35E3EF5B259A274C00B138ED /* PhotoCollageWidget */ = {
+			isa = PBXGroup;
+			children = (
+				35E3EF5C259A274C00B138ED /* PhotoCollageWidget.swift */,
+				35E3EF71259A593300B138ED /* PhotoCollageWidgetView.swift */,
+				35E3EF5E259A274D00B138ED /* Assets.xcassets */,
+				35E3EF60259A274D00B138ED /* Info.plist */,
+			);
+			path = PhotoCollageWidget;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -79,15 +152,34 @@
 				35E3EF3A259A26FE00B138ED /* Sources */,
 				35E3EF3B259A26FE00B138ED /* Frameworks */,
 				35E3EF3C259A26FE00B138ED /* Resources */,
+				35E3EF67259A274D00B138ED /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				35E3EF62259A274D00B138ED /* PBXTargetDependency */,
 			);
 			name = PhotoCollage;
 			productName = PhotoCollage;
 			productReference = 35E3EF3E259A26FE00B138ED /* PhotoCollage.app */;
 			productType = "com.apple.product-type.application";
+		};
+		35E3EF54259A274C00B138ED /* PhotoCollageWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 35E3EF64259A274D00B138ED /* Build configuration list for PBXNativeTarget "PhotoCollageWidgetExtension" */;
+			buildPhases = (
+				35E3EF51259A274C00B138ED /* Sources */,
+				35E3EF52259A274C00B138ED /* Frameworks */,
+				35E3EF53259A274C00B138ED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PhotoCollageWidgetExtension;
+			productName = PhotoCollageWidgetExtension;
+			productReference = 35E3EF55259A274C00B138ED /* PhotoCollageWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -99,6 +191,9 @@
 				LastUpgradeCheck = 1230;
 				TargetAttributes = {
 					35E3EF3D259A26FE00B138ED = {
+						CreatedOnToolsVersion = 12.3;
+					};
+					35E3EF54259A274C00B138ED = {
 						CreatedOnToolsVersion = 12.3;
 					};
 				};
@@ -117,6 +212,7 @@
 			projectRoot = "";
 			targets = (
 				35E3EF3D259A26FE00B138ED /* PhotoCollage */,
+				35E3EF54259A274C00B138ED /* PhotoCollageWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -131,6 +227,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		35E3EF53259A274C00B138ED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35E3EF5F259A274D00B138ED /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -140,10 +244,29 @@
 			files = (
 				35E3EF44259A26FE00B138ED /* ContentView.swift in Sources */,
 				35E3EF42259A26FE00B138ED /* PhotoCollageApp.swift in Sources */,
+				35E3EF6B259A57C500B138ED /* PhotosProvider.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		35E3EF51259A274C00B138ED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35E3EF72259A593300B138ED /* PhotoCollageWidgetView.swift in Sources */,
+				35E3EF5D259A274C00B138ED /* PhotoCollageWidget.swift in Sources */,
+				35E3EF6E259A58C100B138ED /* PhotosProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		35E3EF62259A274D00B138ED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 35E3EF54259A274C00B138ED /* PhotoCollageWidgetExtension */;
+			targetProxy = 35E3EF61259A274D00B138ED /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		35E3EF4B259A26FF00B138ED /* Debug */ = {
@@ -265,6 +388,7 @@
 		35E3EF4E259A26FF00B138ED /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -286,6 +410,7 @@
 		35E3EF4F259A26FF00B138ED /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -299,6 +424,46 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = reshetnikd.PhotoCollage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		35E3EF65259A274D00B138ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PhotoCollageWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = reshetnikd.PhotoCollage.PhotoCollageWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		35E3EF66259A274D00B138ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PhotoCollageWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = reshetnikd.PhotoCollage.PhotoCollageWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -321,6 +486,15 @@
 			buildConfigurations = (
 				35E3EF4E259A26FF00B138ED /* Debug */,
 				35E3EF4F259A26FF00B138ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		35E3EF64259A274D00B138ED /* Build configuration list for PBXNativeTarget "PhotoCollageWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				35E3EF65259A274D00B138ED /* Debug */,
+				35E3EF66259A274D00B138ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
