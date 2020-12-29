@@ -120,11 +120,11 @@ struct LayoutView: View {
     var body: some View {
         ZStack {
             Color.primaryGray
-            VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/) {
+            VStack(alignment: .center) {
                 HStack {
                     Rectangle()
                         .fill(Color.secondaryGray)
-                        .clipShape(RoundedRectangle(cornerRadius: 8, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/))
+                        .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
                 }
                 .padding(.horizontal, 2)
                 .padding(.top, 2)
@@ -132,19 +132,19 @@ struct LayoutView: View {
                 HStack {
                     Rectangle()
                         .fill(Color.secondaryGray)
-                        .clipShape(RoundedRectangle(cornerRadius: 8, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/))
+                        .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
                     Rectangle()
                         .fill(Color.secondaryGray)
-                        .clipShape(RoundedRectangle(cornerRadius: 8, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/))
+                        .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
                 }
                 .padding(.horizontal, 2)
                 .padding(.bottom, 2)
             }
-            .frame(width: innerSize.width, height: innerSize.height, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            .frame(width: innerSize.width, height: innerSize.height, alignment: .center)
             .clipShape(ContainerRelativeShape())
         }
-        .frame(width: outerSize.width, height: outerSize.height, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-        .clipShape(RoundedRectangle(cornerRadius: 16, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/))
+        .frame(width: outerSize.width, height: outerSize.height, alignment: .center)
+        .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
     }
 }
 
@@ -154,34 +154,85 @@ struct SmallWidgetSettingsView: View {
     var body: some View {
         ZStack {
             Color.black
-            Text("Small Widget Settings")
-                .foregroundColor(.white)
-                .navigationBarTitle("Widget", displayMode: .inline)
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
+            
+            GeometryReader { geometry in
+                VStack {
+                    Spacer(minLength: 80)
+                    
+                    LayoutView(innerSize: CGSize(width: 100, height: 100), outerSize: CGSize(width: 110, height: 110))
+                    
+                    Spacer()
+                    
+                    ZStack {
                         HStack {
-                            Label("More", systemImage: "ellipsis")
-                                .font(.title)
-                                .foregroundColor(.white)
+                            VStack {
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 16, style: .continuous)
+                                        .fill(Color.secondaryGray)
+                                        .frame(width: 80, height: 80, alignment: .center)
+                                        .padding(.horizontal, 8)
+                                        .onTapGesture {
+                                            presentationMode.wrappedValue.dismiss()
+                                        }
+                                    
+                                    Image(systemName: "aspectratio")
+                                        .foregroundColor(.white)
+                                }
+                                
+                                Text("Layout")
+                                    .foregroundColor(.white)
+                            }
                             
-                            Label("Download", systemImage: "square.and.arrow.down")
-                                .font(.title)
-                                .foregroundColor(.white)
+                            VStack {
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 16, style: .continuous)
+                                        .fill(Color.secondaryGray)
+                                        .frame(width: 80, height: 80, alignment: .center)
+                                        .padding(.horizontal, 8)
+                                        .onTapGesture {
+                                            presentationMode.wrappedValue.dismiss()
+                                        }
+                                    
+                                    Image(systemName: "photo")
+                                        .foregroundColor(.white)
+                                }
+                                
+                                Text("Photos")
+                                    .foregroundColor(.white)
+                            }
                         }
                     }
-                    
-                    ToolbarItem(placement: .navigation) {
-                        Label("Close", systemImage: "xmark")
-                            .font(.title)
-                            .foregroundColor(.white)
-                            .onTapGesture {
-                                presentationMode.wrappedValue.dismiss()
-                            }
-                    }
+                    .frame(width: geometry.size.width, height: 200, alignment: .center)
+                    .background(Color.primaryGray)
+                    .cornerRadius(24, corners: [.topLeft, .topRight])
                 }
+            }
         }
+        .navigationBarTitle("Widget", displayMode: .inline)
         .edgesIgnoringSafeArea(.all)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                HStack {
+                    Label("More", systemImage: "ellipsis")
+                        .font(.title)
+                        .foregroundColor(.white)
+                    
+                    Label("Download", systemImage: "square.and.arrow.down")
+                        .font(.title)
+                        .foregroundColor(.white)
+                }
+            }
+            
+            ToolbarItem(placement: .navigation) {
+                Label("Close", systemImage: "xmark")
+                    .font(.title)
+                    .foregroundColor(.white)
+                    .onTapGesture {
+                        presentationMode.wrappedValue.dismiss()
+                    }
+            }
+        }
     }
 }
 
@@ -191,34 +242,85 @@ struct MediumWidgetSettingsView: View {
     var body: some View {
         ZStack {
             Color.black
-            Text("Medium Widget Settings")
-                .foregroundColor(.white)
-                .navigationBarTitle("Widget", displayMode: .inline)
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
+            
+            GeometryReader { geometry in
+                VStack {
+                    Spacer(minLength: 80)
+                    
+                    LayoutView(innerSize: CGSize(width: 200, height: 100), outerSize: CGSize(width: 210, height: 110))
+                    
+                    Spacer()
+                    
+                    ZStack {
                         HStack {
-                            Label("More", systemImage: "ellipsis")
-                                .font(.title)
-                                .foregroundColor(.white)
+                            VStack {
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 16, style: .continuous)
+                                        .fill(Color.secondaryGray)
+                                        .frame(width: 80, height: 80, alignment: .center)
+                                        .padding(.horizontal, 8)
+                                        .onTapGesture {
+                                            presentationMode.wrappedValue.dismiss()
+                                        }
+                                    
+                                    Image(systemName: "aspectratio")
+                                        .foregroundColor(.white)
+                                }
+                                
+                                Text("Layout")
+                                    .foregroundColor(.white)
+                            }
                             
-                            Label("Download", systemImage: "square.and.arrow.down")
-                                .font(.title)
-                                .foregroundColor(.white)
+                            VStack {
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 16, style: .continuous)
+                                        .fill(Color.secondaryGray)
+                                        .frame(width: 80, height: 80, alignment: .center)
+                                        .padding(.horizontal, 8)
+                                        .onTapGesture {
+                                            presentationMode.wrappedValue.dismiss()
+                                        }
+                                    
+                                    Image(systemName: "photo")
+                                        .foregroundColor(.white)
+                                }
+                                
+                                Text("Photos")
+                                    .foregroundColor(.white)
+                            }
                         }
                     }
-                    
-                    ToolbarItem(placement: .navigation) {
-                        Label("Close", systemImage: "xmark")
-                            .font(.title)
-                            .foregroundColor(.white)
-                            .onTapGesture {
-                                presentationMode.wrappedValue.dismiss()
-                            }
-                    }
+                    .frame(width: geometry.size.width, height: 200, alignment: .center)
+                    .background(Color.primaryGray)
+                    .cornerRadius(24, corners: [.topLeft, .topRight])
                 }
+            }
         }
+        .navigationBarTitle("Widget", displayMode: .inline)
         .edgesIgnoringSafeArea(.all)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                HStack {
+                    Label("More", systemImage: "ellipsis")
+                        .font(.title)
+                        .foregroundColor(.white)
+                    
+                    Label("Download", systemImage: "square.and.arrow.down")
+                        .font(.title)
+                        .foregroundColor(.white)
+                }
+            }
+            
+            ToolbarItem(placement: .navigation) {
+                Label("Close", systemImage: "xmark")
+                    .font(.title)
+                    .foregroundColor(.white)
+                    .onTapGesture {
+                        presentationMode.wrappedValue.dismiss()
+                    }
+            }
+        }
     }
 }
 
@@ -228,34 +330,101 @@ struct LargeWidgetSettingsView: View {
     var body: some View {
         ZStack {
             Color.black
-            Text("Large Widget Settings")
-                .foregroundColor(.white)
-                .navigationBarTitle("Widget", displayMode: .inline)
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
+            
+            GeometryReader { geometry in
+                VStack {
+                    Spacer(minLength: 80)
+                    
+                    LayoutView(innerSize: CGSize(width: 200, height: 200), outerSize: CGSize(width: 210, height: 210))
+                    
+                    Spacer()
+                    
+                    ZStack {
                         HStack {
-                            Label("More", systemImage: "ellipsis")
-                                .font(.title)
-                                .foregroundColor(.white)
+                            VStack {
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 16, style: .continuous)
+                                        .fill(Color.secondaryGray)
+                                        .frame(width: 80, height: 80, alignment: .center)
+                                        .padding(.horizontal, 8)
+                                        .onTapGesture {
+                                            presentationMode.wrappedValue.dismiss()
+                                        }
+                                    
+                                    Image(systemName: "aspectratio")
+                                        .foregroundColor(.white)
+                                }
+                                
+                                Text("Layout")
+                                    .foregroundColor(.white)
+                            }
                             
-                            Label("Download", systemImage: "square.and.arrow.down")
-                                .font(.title)
-                                .foregroundColor(.white)
+                            VStack {
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 16, style: .continuous)
+                                        .fill(Color.secondaryGray)
+                                        .frame(width: 80, height: 80, alignment: .center)
+                                        .padding(.horizontal, 8)
+                                        .onTapGesture {
+                                            presentationMode.wrappedValue.dismiss()
+                                        }
+                                    
+                                    Image(systemName: "photo")
+                                        .foregroundColor(.white)
+                                }
+                                
+                                Text("Photos")
+                                    .foregroundColor(.white)
+                            }
                         }
                     }
-                    
-                    ToolbarItem(placement: .navigation) {
-                        Label("Close", systemImage: "xmark")
-                            .font(.title)
-                            .foregroundColor(.white)
-                            .onTapGesture {
-                                presentationMode.wrappedValue.dismiss()
-                            }
-                    }
+                    .frame(width: geometry.size.width, height: 200, alignment: .center)
+                    .background(Color.primaryGray)
+                    .cornerRadius(24, corners: [.topLeft, .topRight])
                 }
+            }
         }
+        .navigationBarTitle("Widget", displayMode: .inline)
         .edgesIgnoringSafeArea(.all)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                HStack {
+                    Label("More", systemImage: "ellipsis")
+                        .font(.title)
+                        .foregroundColor(.white)
+                    
+                    Label("Download", systemImage: "square.and.arrow.down")
+                        .font(.title)
+                        .foregroundColor(.white)
+                }
+            }
+            
+            ToolbarItem(placement: .navigation) {
+                Label("Close", systemImage: "xmark")
+                    .font(.title)
+                    .foregroundColor(.white)
+                    .onTapGesture {
+                        presentationMode.wrappedValue.dismiss()
+                    }
+            }
+        }
+    }
+}
+
+struct RoundedCorner: Shape {
+    var radius: CGFloat = .infinity
+    var corners: UIRectCorner = .allCorners
+    
+    func path(in rect: CGRect) -> Path {
+        let path = UIBezierPath(roundedRect: rect, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        return Path(path.cgPath)
+    }
+}
+
+extension View {
+    func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
+        clipShape( RoundedCorner(radius: radius, corners: corners) )
     }
 }
 
