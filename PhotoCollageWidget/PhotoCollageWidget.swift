@@ -8,10 +8,6 @@
 import WidgetKit
 import SwiftUI
 
-enum CollageLayout {
-    case oneOnTopOneOnBottom, oneOnTopTwoOnBottom, twoOnTopOneOnBottom, oneOnLeftOneOnRight, oneOnLeftTwoOnRight, twoOnLeftOneOnRight, twoOnLeftTwoOnRight
-}
-
 struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> PhotoCollageEntry {
         PhotoCollageEntry(date: Date(), layout: .oneOnTopTwoOnBottom, photos: [])

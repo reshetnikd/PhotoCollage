@@ -7,8 +7,25 @@
 
 import SwiftUI
 
+enum WidgetSize {
+    case small, medium, large
+}
+
+enum CollageLayout {
+    case oneOnTopOneOnBottom, oneOnTopTwoOnBottom, twoOnTopOneOnBottom, oneOnLeftOneOnRight, oneOnLeftTwoOnRight, twoOnLeftOneOnRight, twoOnLeftTwoOnRight
+}
+
+class WidgetSettings: ObservableObject {
+    @Published var size: WidgetSize = .small
+    @Published var layout: CollageLayout = .twoOnLeftTwoOnRight
+    @Published var photos: [String] = []
+}
+
 struct MainView: View {
-    @State private var isPresented = false
+    @EnvironmentObject var settings: WidgetSettings
+    @State private var isSmallSelected = false
+    @State private var isMediumSelected = false
+    @State private var isLargeSelected = false
     
     var body: some View {
         ZStack {
@@ -17,25 +34,28 @@ struct MainView: View {
                 Spacer()
                 
                 LayoutView(innerSize: CGSize(width: 100, height: 100), outerSize: CGSize(width: 110, height: 110))
-                    .fullScreenCover(isPresented: $isPresented, content: FullScreenModalView.init)
+                    .fullScreenCover(isPresented: $isSmallSelected, content: FullScreenModalView.init)
                     .onTapGesture {
-                        self.isPresented.toggle()
+                        self.isSmallSelected.toggle()
+                        self.settings.size = .small
                 }
                 
                 Spacer()
                 
                 LayoutView(innerSize: CGSize(width: 200, height: 100), outerSize: CGSize(width: 210, height: 110))
-                    .fullScreenCover(isPresented: $isPresented, content: FullScreenModalView.init)
+                    .fullScreenCover(isPresented: $isMediumSelected, content: FullScreenModalView.init)
                     .onTapGesture {
-                        self.isPresented.toggle()
+                        self.isMediumSelected.toggle()
+                        self.settings.size = .medium
                     }
                 
                 Spacer()
                 
                 LayoutView(innerSize: CGSize(width: 200, height: 200), outerSize: CGSize(width: 210, height: 210))
-                    .fullScreenCover(isPresented: $isPresented, content: FullScreenModalView.init)
+                    .fullScreenCover(isPresented: $isLargeSelected, content: FullScreenModalView.init)
                     .onTapGesture {
-                        self.isPresented.toggle()
+                        self.isLargeSelected.toggle()
+                        self.settings.size = .large
                     }
                 
                 Spacer()
@@ -46,9 +66,17 @@ struct MainView: View {
 }
 
 struct FullScreenModalView: View {
+    @EnvironmentObject var settings: WidgetSettings
+    
     var body: some View {
         NavigationView {
-            SettingsView()
+            if settings.size == .small {
+                SmallWidgetSettingsView()
+            } else if settings.size == .medium {
+                MediumWidgetSettingsView()
+            } else if settings.size == .large {
+                LargeWidgetSettingsView()
+            }
         }
     }
 }
@@ -56,6 +84,7 @@ struct FullScreenModalView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
+            .environmentObject(WidgetSettings())
     }
 }
 
@@ -119,13 +148,87 @@ struct LayoutView: View {
     }
 }
 
-struct SettingsView: View {
+struct SmallWidgetSettingsView: View {
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         ZStack {
             Color.black
-            Text("Settings")
+            Text("Small Widget Settings")
+                .foregroundColor(.white)
+                .navigationBarTitle("Widget", displayMode: .inline)
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        HStack {
+                            Label("More", systemImage: "ellipsis")
+                                .font(.title)
+                                .foregroundColor(.white)
+                            
+                            Label("Download", systemImage: "square.and.arrow.down")
+                                .font(.title)
+                                .foregroundColor(.white)
+                        }
+                    }
+                    
+                    ToolbarItem(placement: .navigation) {
+                        Label("Close", systemImage: "xmark")
+                            .font(.title)
+                            .foregroundColor(.white)
+                            .onTapGesture {
+                                presentationMode.wrappedValue.dismiss()
+                            }
+                    }
+                }
+        }
+        .edgesIgnoringSafeArea(.all)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+    }
+}
+
+struct MediumWidgetSettingsView: View {
+    @Environment(\.presentationMode) var presentationMode
+    
+    var body: some View {
+        ZStack {
+            Color.black
+            Text("Medium Widget Settings")
+                .foregroundColor(.white)
+                .navigationBarTitle("Widget", displayMode: .inline)
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        HStack {
+                            Label("More", systemImage: "ellipsis")
+                                .font(.title)
+                                .foregroundColor(.white)
+                            
+                            Label("Download", systemImage: "square.and.arrow.down")
+                                .font(.title)
+                                .foregroundColor(.white)
+                        }
+                    }
+                    
+                    ToolbarItem(placement: .navigation) {
+                        Label("Close", systemImage: "xmark")
+                            .font(.title)
+                            .foregroundColor(.white)
+                            .onTapGesture {
+                                presentationMode.wrappedValue.dismiss()
+                            }
+                    }
+                }
+        }
+        .edgesIgnoringSafeArea(.all)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+    }
+}
+
+struct LargeWidgetSettingsView: View {
+    @Environment(\.presentationMode) var presentationMode
+    
+    var body: some View {
+        ZStack {
+            Color.black
+            Text("Large Widget Settings")
                 .foregroundColor(.white)
                 .navigationBarTitle("Widget", displayMode: .inline)
                 .toolbar {

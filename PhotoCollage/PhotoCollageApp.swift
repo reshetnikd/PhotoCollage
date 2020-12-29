@@ -12,6 +12,7 @@ struct PhotoCollageApp: App {
     var body: some Scene {
         WindowGroup {
             MainView()
+                .environmentObject(WidgetSettings())
         }
     }
 }
