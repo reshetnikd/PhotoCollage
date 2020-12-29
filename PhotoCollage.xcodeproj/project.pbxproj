@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		35E3EF42259A26FE00B138ED /* PhotoCollageApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E3EF41259A26FE00B138ED /* PhotoCollageApp.swift */; };
-		35E3EF44259A26FE00B138ED /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E3EF43259A26FE00B138ED /* ContentView.swift */; };
+		35E3EF44259A26FE00B138ED /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E3EF43259A26FE00B138ED /* MainView.swift */; };
 		35E3EF46259A26FF00B138ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35E3EF45259A26FF00B138ED /* Assets.xcassets */; };
 		35E3EF49259A26FF00B138ED /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35E3EF48259A26FF00B138ED /* Preview Assets.xcassets */; };
 		35E3EF58259A274C00B138ED /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35E3EF57259A274C00B138ED /* WidgetKit.framework */; };
@@ -19,6 +19,8 @@
 		35E3EF6B259A57C500B138ED /* PhotosProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E3EF6A259A57C500B138ED /* PhotosProvider.swift */; };
 		35E3EF6E259A58C100B138ED /* PhotosProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E3EF6A259A57C500B138ED /* PhotosProvider.swift */; };
 		35E3EF72259A593300B138ED /* PhotoCollageWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E3EF71259A593300B138ED /* PhotoCollageWidgetView.swift */; };
+		35E3EF75259B5F7100B138ED /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E3EF43259A26FE00B138ED /* MainView.swift */; };
+		35E3EF7D259B60C800B138ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35E3EF5E259A274D00B138ED /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +50,7 @@
 /* Begin PBXFileReference section */
 		35E3EF3E259A26FE00B138ED /* PhotoCollage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoCollage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35E3EF41259A26FE00B138ED /* PhotoCollageApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollageApp.swift; sourceTree = "<group>"; };
-		35E3EF43259A26FE00B138ED /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		35E3EF43259A26FE00B138ED /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		35E3EF45259A26FF00B138ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		35E3EF48259A26FF00B138ED /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		35E3EF4A259A26FF00B138ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -105,7 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				35E3EF41259A26FE00B138ED /* PhotoCollageApp.swift */,
-				35E3EF43259A26FE00B138ED /* ContentView.swift */,
+				35E3EF43259A26FE00B138ED /* MainView.swift */,
 				35E3EF6A259A57C500B138ED /* PhotosProvider.swift */,
 				35E3EF45259A26FF00B138ED /* Assets.xcassets */,
 				35E3EF4A259A26FF00B138ED /* Info.plist */,
@@ -223,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				35E3EF49259A26FF00B138ED /* Preview Assets.xcassets in Resources */,
+				35E3EF7D259B60C800B138ED /* Assets.xcassets in Resources */,
 				35E3EF46259A26FF00B138ED /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -242,7 +245,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35E3EF44259A26FE00B138ED /* ContentView.swift in Sources */,
+				35E3EF44259A26FE00B138ED /* MainView.swift in Sources */,
 				35E3EF42259A26FE00B138ED /* PhotoCollageApp.swift in Sources */,
 				35E3EF6B259A57C500B138ED /* PhotosProvider.swift in Sources */,
 			);
@@ -254,6 +257,7 @@
 			files = (
 				35E3EF72259A593300B138ED /* PhotoCollageWidgetView.swift in Sources */,
 				35E3EF5D259A274C00B138ED /* PhotoCollageWidget.swift in Sources */,
+				35E3EF75259B5F7100B138ED /* MainView.swift in Sources */,
 				35E3EF6E259A58C100B138ED /* PhotosProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -14,7 +14,7 @@ enum CollageLayout {
 
 struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> PhotoCollageEntry {
-        PhotoCollageEntry(date: Date(), layout: .oneOnTopTwoOnBottom, photos: PhotosProvider.all())
+        PhotoCollageEntry(date: Date(), layout: .oneOnTopTwoOnBottom, photos: [])
     }
 
     func getSnapshot(in context: Context, completion: @escaping (PhotoCollageEntry) -> ()) {
@@ -55,6 +55,8 @@ struct PhotoCollageWidgetEntryView : View {
                     OneOnTopOneOnBottomCollageView(photos: entry.photos)
                 } else if entry.layout == .twoOnLeftTwoOnRight {
                     TwoOnLeftTwoOnRightCollageView(photos: entry.photos)
+                } else {
+                    PlaceholderCollageView()
                 }
             case .systemMedium:
                 if entry.layout == .twoOnLeftTwoOnRight {
@@ -65,6 +67,8 @@ struct PhotoCollageWidgetEntryView : View {
                     TwoOnLeftOneOnRightCollageView(photos: entry.photos)
                 } else if entry.layout == .oneOnLeftOneOnRight {
                     OneOnLeftOneOnRightCollageView(photos: entry.photos)
+                } else {
+                    PlaceholderCollageView()
                 }
             case .systemLarge:
                 if entry.layout == .oneOnTopTwoOnBottom {
@@ -75,6 +79,8 @@ struct PhotoCollageWidgetEntryView : View {
                     TwoOnTopOneOnBottomCollageView(photos: entry.photos)
                 } else if entry.layout == .twoOnLeftTwoOnRight {
                     TwoOnLeftTwoOnRightCollageView(photos: entry.photos)
+                } else {
+                    PlaceholderCollageView()
                 }
             default: PlaceholderCollageView()
             }
@@ -103,9 +109,4 @@ struct PhotoCollageWidget_Previews: PreviewProvider {
         PhotoCollageWidgetEntryView(entry: PhotoCollageEntry(date: Date(), layout: .oneOnLeftOneOnRight, photos: PhotosProvider.all()))
             .previewContext(WidgetPreviewContext(family: .systemMedium))
     }
-}
-
-extension Color {
-    static let primaryGray = Color("primaryGray")
-    static let secondaryGray = Color("secondaryGray")
 }
