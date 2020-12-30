@@ -150,6 +150,8 @@ struct LayoutView: View {
 
 struct SmallWidgetSettingsView: View {
     @Environment(\.presentationMode) var presentationMode
+    @State var viewState = CGSize.zero
+    @State var isShowingLayout = false
     
     var body: some View {
         ZStack {
@@ -172,7 +174,8 @@ struct SmallWidgetSettingsView: View {
                                         .frame(width: 80, height: 80, alignment: .center)
                                         .padding(.horizontal, 8)
                                         .onTapGesture {
-                                            presentationMode.wrappedValue.dismiss()
+                                            self.isShowingLayout = true
+                                            self.viewState = .zero
                                         }
                                     
                                     Image(systemName: "aspectratio")
@@ -190,7 +193,7 @@ struct SmallWidgetSettingsView: View {
                                         .frame(width: 80, height: 80, alignment: .center)
                                         .padding(.horizontal, 8)
                                         .onTapGesture {
-                                            presentationMode.wrappedValue.dismiss()
+                                            // Photo gallery
                                         }
                                     
                                     Image(systemName: "photo")
@@ -201,10 +204,51 @@ struct SmallWidgetSettingsView: View {
                                     .foregroundColor(.white)
                             }
                         }
+                        .frame(width: geometry.size.width, height: 200, alignment: .center)
+                        .background(Color.primaryGray)
+                        .cornerRadius(24, corners: [.topLeft, .topRight])
+                        
+                        if isShowingLayout {
+                            Group {
+                                Color.secondaryGray
+                                
+                                HStack {
+                                    LayoutView(innerSize: CGSize(width: 70, height: 70), outerSize: CGSize(width: 80, height: 80))
+                                        .overlay(RoundedRectangle(cornerRadius: 8)
+                                                    .stroke(Color.secondaryGray, lineWidth: 2))
+                                    LayoutView(innerSize: CGSize(width: 70, height: 70), outerSize: CGSize(width: 80, height: 80))
+                                        .overlay(RoundedRectangle(cornerRadius: 8)
+                                                    .stroke(Color.secondaryGray, lineWidth: 2))
+                                    LayoutView(innerSize: CGSize(width: 70, height: 70), outerSize: CGSize(width: 80, height: 80))
+                                        .overlay(RoundedRectangle(cornerRadius: 8)
+                                                    .stroke(Color.secondaryGray, lineWidth: 2))
+                                    LayoutView(innerSize: CGSize(width: 70, height: 70), outerSize: CGSize(width: 80, height: 80))
+                                        .overlay(RoundedRectangle(cornerRadius: 8)
+                                                    .stroke(Color.secondaryGray, lineWidth: 2))
+                                }
+                            }
+                            .frame(width: geometry.size.width, height: 200, alignment: .center)
+                            .background(Color.primaryGray)
+                            .cornerRadius(24, corners: [.topLeft, .topRight])
+                            .offset(y: viewState.height)
+                            .animation(.spring())
+                            .gesture(
+                                DragGesture()
+                                    .onChanged { value in
+                                        if value.startLocation.y < value.location.y {
+                                            self.viewState = value.translation
+                                        }
+                                    }
+                                    .onEnded { value in
+                                        if self.viewState.height > 100 {
+                                            self.viewState = CGSize(width: 0, height: 800)
+                                        } else {
+                                            self.viewState = .zero
+                                        }
+                                    }
+                            )
+                        }
                     }
-                    .frame(width: geometry.size.width, height: 200, alignment: .center)
-                    .background(Color.primaryGray)
-                    .cornerRadius(24, corners: [.topLeft, .topRight])
                 }
             }
         }
